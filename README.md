@@ -1,59 +1,34 @@
-# SportClubManager
+# Správce týmů ve sportovním klubu
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.16.
+Tento projekt je Angular aplikace pro správu sportovních týmů a jejich soupisek. Vznikl jako vypracování zadání pro výběrové řízení.
 
-## Development server
+## Implementované funkcionality
 
-To start a local development server, run:
+### Správa týmů
+- **Zobrazení seznamu týmů:** Přehled všech existujících týmů.
+- **Přidání nového týmu:** Možnost vytvořit nový tým pomocí modálního okna.
+- **Editace názvu týmu:** Inline úprava názvu přímo v detailu týmu.
+- **Smazání týmu:** Možnost smazat tým s potvrzovacím dialogem.
 
-```bash
-ng serve
-```
+### Správa soupisky
+- **Zobrazení soupisky:** V detailu týmu je vidět seznam všech členů.
+- **Přidání člena na soupisku:** Modální okno pro výběr sportovce, který ještě není v žádném týmu.
+  - Možnost definovat roli (Hráč, Trenér, Hráč i trenér) a pozici.
+  - Po přidání se zobrazí 2sekundový načítací stav a formulář se automaticky zavře.
+- **Úprava člena na soupisce:** Inline editace role a pozice člena.
+- **Odebrání člena ze soupisky:** Možnost odebrat člena s potvrzovacím dialogem.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Bonusové funkcionality
+- **Fulltextové vyhledávání:** Na hlavní stránce lze vyhledávat týmy podle jejich názvu nebo podle jména kteréhokoliv člena na jejich soupisce.
+- **Základ pro tematizaci:** V globálních stylech jsou použity CSS proměnné, které umožňují snadnou změnu barevného schématu aplikace.
 
-## Code scaffolding
+## Technologický stack
+- Angular
+- RxJS
+- TypeScript
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Spuštění projektu
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  Naklonujte repozitář a v terminálu spusťte `npm install` pro instalaci závislostí.
+2.  Spusťte vývojový server pomocí příkazu `ng serve`.
+3.  Aplikace bude dostupná na adrese `http://localhost:4200/`.

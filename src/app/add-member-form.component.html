@@ -1,0 +1,43 @@
+<div class="modal-backdrop" (click)="onClose()"></div>
+<div class="modal-content">
+  <div class="modal-header">
+    <h3>Přidat člena do týmu</h3>
+    <button class="close-btn" (click)="onClose()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="memberId">Člen</label>
+        <select id="memberId" formControlName="memberId">
+          <option value="" disabled>Vyberte člena</option>
+          @for(member of availableMembers; track member.id) {
+            <option [value]="member.id">{{ member.name }}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select id="role" formControlName="role">
+          @for(role of roles; track role) {
+            <option [value]="role">{{ role }}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="position">Pozice</label>
+        <input type="text" id="position" formControlName="position" placeholder="Např. útočník, brankář...">
+      </div>
+
+      @if (error) {
+        <div class="error-message">{{ error }}</div>
+      }
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">Zrušit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="addMemberForm.invalid || isSubmitting">
+          {{ isSubmitting ? 'Přidávám...' : 'Přidat člena' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="modal-backdrop" (click)="onClose()"></div>
+<div class="modal-content">
+  <div class="modal-header">
+    <h3>Přidat nový tým</h3>
+    <button class="close-btn" (click)="onClose()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="onSubmit()" #teamForm="ngForm">
+      <div class="form-group">
+        <label for="teamName">Název týmu</label>
+        <input type="text" id="teamName" [(ngModel)]="teamName" name="teamName" required class="form-control">
+      </div>
+
+      @if (error) {
+        <div class="error-message">{{ error }}</div>
+      }
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">Zrušit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!teamForm.form.valid || isSubmitting">
+          {{ isSubmitting ? 'Přidávám...' : 'Přidat tým' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
