@@ -19,8 +19,7 @@ Tento projekt je Angular aplikace pro správu sportovních týmů a jejich soupi
 - **Odebrání člena ze soupisky:** Možnost odebrat člena s potvrzovacím dialogem.
 
 ### Bonusové funkcionality
-- **Fulltextové vyhledávání:** Na hlavní stránce lze vyhledávat týmy podle jejich názvu nebo podle jména kteréhokoliv člena na jejich soupisce.
-- **Základ pro tematizaci:** V globálních stylech jsou použity CSS proměnné, které umožňují snadnou změnu barevného schématu aplikace.
+- **Vyhledávání:** Na hlavní stránce lze vyhledávat týmy podle jejich názvu nebo podle jména kteréhokoliv člena na jejich soupisce.
 
 ## Technologický stack
 - Angular
@@ -29,6 +28,6 @@ Tento projekt je Angular aplikace pro správu sportovních týmů a jejich soupi
 
 ## Spuštění projektu
 
-1.  Naklonujte repozitář a v terminálu spusťte `npm install` pro instalaci závislostí.
+1.  Naklonujte repozitář a v terminálu spusťte `npm install` pro instalaci.
 2.  Spusťte vývojový server pomocí příkazu `ng serve`.
 3.  Aplikace bude dostupná na adrese `http://localhost:4200/`.
